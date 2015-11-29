@@ -103,5 +103,24 @@ namespace MvcPrototype.DAL.Tests.Repositories
             Assert.AreEqual(art1, articles.ElementAt(0));
             Assert.AreEqual(art2, articles.ElementAt(1));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InsertArticle_WhenInputModelIsNull_ShouldThrowArgumentNullException()
+        {
+            sut.InsertArticle(null);
+
+            Assert.Fail("Should throw ArgumentNullException");
+        }
+
+        [TestMethod]
+        public void InsertArticle_WhenInputModelIsCorrect_ShouldCallSetAddExactlyOnce()
+        {
+            Article newArt = new Article() { Id = 1, Name = "Test_ABS", Price = 13.666 };
+            
+            sut.InsertArticle(newArt);
+
+            setMock.Verify(m => m.Add(It.IsAny<Article>()), Times.Once());
+        }
     }
 }
