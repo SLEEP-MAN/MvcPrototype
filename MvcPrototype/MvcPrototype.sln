@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPrototype.DAL.Interfaces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPrototype.DAL", "MvcPrototype.DAL\MvcPrototype.DAL.csproj", "{0487E557-3FE3-4983-BD19-CF34CE531EE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPrototype.DAL.Tests", "MvcPrototype.DAL.Tests\MvcPrototype.DAL.Tests.csproj", "{55FAEA19-4E51-41EB-B69B-D54E4C2E7250}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0487E557-3FE3-4983-BD19-CF34CE531EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0487E557-3FE3-4983-BD19-CF34CE531EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0487E557-3FE3-4983-BD19-CF34CE531EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55FAEA19-4E51-41EB-B69B-D54E4C2E7250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55FAEA19-4E51-41EB-B69B-D54E4C2E7250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55FAEA19-4E51-41EB-B69B-D54E4C2E7250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55FAEA19-4E51-41EB-B69B-D54E4C2E7250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
