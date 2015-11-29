@@ -15,6 +15,9 @@ namespace MvcPrototype.DAL.Repositories
 
         public ArticleRepository(IArticleContext applicationContext)
         {
+            if (applicationContext == null)
+                throw (new ArgumentNullException("applicationContext"));
+
             _articleContext = applicationContext;
         }
 

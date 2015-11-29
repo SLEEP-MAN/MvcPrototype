@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -37,6 +38,15 @@ namespace MvcPrototype.DAL.Tests.Repositories
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ctor_WhenArticleContextIsNull_ShouldThrowArgumentNullException()
+        {
+            sut = new ArticleRepository(null);
+
+            Assert.Fail("Should throw ArgumentNullException");
+        }
+
+        [TestMethod]
         public void GetArticles_WhenRepositoryIsEmpty_ShouldReturnEmptyList()
         {
             var data = new List<Article>
@@ -51,8 +61,7 @@ namespace MvcPrototype.DAL.Tests.Repositories
 
             Assert.AreEqual(0, articles.Count());
         }
-
-
+        
         [TestMethod]
         public void GetArticles_WhenRepositoryIsNotEmpty_ShouldReturnCorrectNumberOfElements()
         {
