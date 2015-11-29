@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPrototype.Controllers", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPrototype.Models", "MvcPrototype.Models\MvcPrototype.Models.csproj", "{CC07B7B7-1DF4-49B2-A390-D4A0723A4224}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPrototype.DAL.Interfaces", "MvcPrototype.DAL.Interfaces\MvcPrototype.DAL.Interfaces.csproj", "{EFB1C64F-9B17-4465-BD77-579546A7DF6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPrototype.DAL", "MvcPrototype.DAL\MvcPrototype.DAL.csproj", "{0487E557-3FE3-4983-BD19-CF34CE531EE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{CC07B7B7-1DF4-49B2-A390-D4A0723A4224}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC07B7B7-1DF4-49B2-A390-D4A0723A4224}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC07B7B7-1DF4-49B2-A390-D4A0723A4224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB1C64F-9B17-4465-BD77-579546A7DF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB1C64F-9B17-4465-BD77-579546A7DF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB1C64F-9B17-4465-BD77-579546A7DF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB1C64F-9B17-4465-BD77-579546A7DF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0487E557-3FE3-4983-BD19-CF34CE531EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0487E557-3FE3-4983-BD19-CF34CE531EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0487E557-3FE3-4983-BD19-CF34CE531EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0487E557-3FE3-4983-BD19-CF34CE531EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

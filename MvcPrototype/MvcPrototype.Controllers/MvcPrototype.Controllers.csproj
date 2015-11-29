@@ -45,6 +45,16 @@
     <Compile Include="HomeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcPrototype.DAL.Interfaces\MvcPrototype.DAL.Interfaces.csproj">
+      <Project>{efb1c64f-9b17-4465-bd77-579546a7df6d}</Project>
+      <Name>MvcPrototype.DAL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcPrototype.Models\MvcPrototype.Models.csproj">
+      <Project>{cc07b7b7-1df4-49b2-a390-d4a0723a4224}</Project>
+      <Name>MvcPrototype.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
