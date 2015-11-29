@@ -50,7 +50,49 @@ namespace MvcPrototype.DAL.Tests.Repositories
             var articles = sut.GetArticles();
 
             Assert.AreEqual(0, articles.Count());
+        }
 
+
+        [TestMethod]
+        public void GetArticles_WhenRepositoryIsNotEmpty_ShouldReturnCorrectNumberOfElements()
+        {
+            var data = new List<Article>
+            {
+                new Article(),
+                new Article()
+            }.AsQueryable();
+
+            setMock.As<IQueryable<Article>>().Setup(m => m.Provider).Returns(data.Provider);
+            setMock.As<IQueryable<Article>>().Setup(m => m.Expression).Returns(data.Expression);
+            setMock.As<IQueryable<Article>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            setMock.As<IQueryable<Article>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var articles = sut.GetArticles();
+
+            Assert.AreEqual(2, articles.Count());
+        }
+
+        [TestMethod]
+        public void GetArticles_WhenRepositoryIsNotEmpty_ShouldReturnElementsFromRepository()
+        {
+            Article art1 = new Article() { Id = 1, Name = "Test_ABS", Price = 13.666 };
+            Article art2 = new Article() { Id = 2, Name = "Testing!!!", Price = 6.9 };
+
+            var data = new List<Article>
+            {
+                art1,
+                art2
+            }.AsQueryable();
+
+            setMock.As<IQueryable<Article>>().Setup(m => m.Provider).Returns(data.Provider);
+            setMock.As<IQueryable<Article>>().Setup(m => m.Expression).Returns(data.Expression);
+            setMock.As<IQueryable<Article>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            setMock.As<IQueryable<Article>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var articles = sut.GetArticles();
+
+            Assert.AreEqual(art1, articles.ElementAt(0));
+            Assert.AreEqual(art2, articles.ElementAt(1));
         }
     }
 }
