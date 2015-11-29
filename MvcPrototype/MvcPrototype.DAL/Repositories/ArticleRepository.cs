@@ -33,7 +33,10 @@ namespace MvcPrototype.DAL.Repositories
 
         public void InsertArticle(Article article)
         {
-            //_articleContext.Articles.Add(article);
+            if (article == null)
+                throw (new ArgumentNullException("article"));
+
+            _articleContext.Articles.Add(article);
         }
 
         public void UpdateArticle(Article article)
