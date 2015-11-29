@@ -131,6 +131,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Installers\DALInstaller.cs" />
     <Compile Include="Installers\ControllersInstaller.cs" />
     <Compile Include="Plumbing\WindsorControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,6 +165,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="web.config" />
+    <Content Include="Views\Article\Index.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -191,6 +193,14 @@
     <ProjectReference Include="..\MvcPrototype.Controllers\MvcPrototype.Controllers.csproj">
       <Project>{04d444dc-b0b0-492b-bf97-1fa43af3fb15}</Project>
       <Name>MvcPrototype.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcPrototype.DAL.Interfaces\MvcPrototype.DAL.Interfaces.csproj">
+      <Project>{efb1c64f-9b17-4465-bd77-579546a7df6d}</Project>
+      <Name>MvcPrototype.DAL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcPrototype.DAL\MvcPrototype.DAL.csproj">
+      <Project>{0487e557-3fe3-4983-bd19-cf34ce531ee3}</Project>
+      <Name>MvcPrototype.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\MvcPrototype.Models\MvcPrototype.Models.csproj">
       <Project>{cc07b7b7-1df4-49b2-a390-d4a0723a4224}</Project>

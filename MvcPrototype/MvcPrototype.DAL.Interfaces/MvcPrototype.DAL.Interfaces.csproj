@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="IArticleContext.cs" />
     <Compile Include="IDbContext.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Repositories\IArticleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -3,7 +3,7 @@ using MvcPrototype.Models;
 
 namespace MvcPrototype.DAL.Interfaces.Repositories
 {
-    public interface IArticleRepository
+    public interface IArticleRepository : IRepository
     {
         IEnumerable<Article> GetArticles();
         Article GetArticletByID(int articleId);
