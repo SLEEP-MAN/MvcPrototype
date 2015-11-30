@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Installers\DALInstaller.cs" />
     <Compile Include="Installers\ControllersInstaller.cs" />
+    <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Plumbing\WindsorControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -213,6 +214,10 @@
     <ProjectReference Include="..\MvcPrototype.Models\MvcPrototype.Models.csproj">
       <Project>{cc07b7b7-1df4-49b2-a390-d4a0723a4224}</Project>
       <Name>MvcPrototype.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcPrototype.Services.Interfaces\MvcPrototype.Services.Interfaces.csproj">
+      <Project>{c961057d-c40d-4388-a09a-c6e4934a603c}</Project>
+      <Name>MvcPrototype.Services.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

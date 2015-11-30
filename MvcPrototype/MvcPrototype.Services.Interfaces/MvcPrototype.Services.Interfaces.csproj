@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{04D444DC-B0B0-492B-BF97-1FA43AF3FB15}</ProjectGuid>
+    <ProjectGuid>{C961057D-C40D-4388-A09A-C6E4934A603C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvcPrototype.Controllers</RootNamespace>
-    <AssemblyName>MvcPrototype.Controllers</AssemblyName>
+    <RootNamespace>MvcPrototype.Services.Interfaces</RootNamespace>
+    <AssemblyName>MvcPrototype.Services.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,18 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,30 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArticleController.cs" />
-    <Compile Include="HomeController.cs" />
+    <Compile Include="IArticleService.cs" />
+    <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvcPrototype.DAL.Interfaces\MvcPrototype.DAL.Interfaces.csproj">
-      <Project>{efb1c64f-9b17-4465-bd77-579546a7df6d}</Project>
-      <Name>MvcPrototype.DAL.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MvcPrototype.Models\MvcPrototype.Models.csproj">
       <Project>{cc07b7b7-1df4-49b2-a390-d4a0723a4224}</Project>
       <Name>MvcPrototype.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvcPrototype.Services.Interfaces\MvcPrototype.Services.Interfaces.csproj">
-      <Project>{c961057d-c40d-4388-a09a-c6e4934a603c}</Project>
-      <Name>MvcPrototype.Services.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
