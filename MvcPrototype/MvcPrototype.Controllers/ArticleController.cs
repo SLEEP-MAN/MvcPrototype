@@ -1,7 +1,9 @@
 ﻿using System.Data;
 using System.Web.Mvc;
+using FluentValidation.Results;
 using MvcPrototype.Models;
 using MvcPrototype.Services.Interfaces;
+using MvcValidation.Validators;
 using PagedList;
 
 namespace MvcPrototype.Controllers
@@ -47,21 +49,22 @@ namespace MvcPrototype.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id, Name, Description, Price")]Article article)
         {
-            try
+            ArticleValidator validator = new ArticleValidator();
+            ValidationResult result = validator.Validate(article);
+            if (result.IsValid)
             {
-                if (ModelState.IsValid)
+                _articleService.InsertArticle(article);
+                _articleService.Save();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (ValidationFailure failer in result.Errors)
                 {
-                    _articleService.InsertArticle(article);
-                    _articleService.Save();
-                    return RedirectToAction("Index");
+                    ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
                 }
+                return View(article);
             }
-            catch (DataException /* dex */)
-            {
-                //Log the error (uncomment dex variable name after DataException and add a line here to write a log.
-                ModelState.AddModelError(string.Empty, "Unable to save changes. Try again, and if the problem persists contact your system administrator.");
-            }
-            return View(article);
         }
 
         //
@@ -78,21 +81,22 @@ namespace MvcPrototype.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id, Name, Description, Price")]Article article)
         {
-            try
+            ArticleValidator validator = new ArticleValidator();
+            ValidationResult result = validator.Validate(article);
+            if (result.IsValid)
             {
-                if (ModelState.IsValid)
+                _articleService.UpdateArticle(article);
+                _articleService.Save();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (ValidationFailure failer in result.Errors)
                 {
-                    _articleService.UpdateArticle(article);
-                    _articleService.Save();
-                    return RedirectToAction("Index");
+                    ModelState.AddModelError(failer.PropertyName, failer.ErrorMessage);
                 }
+                return View(article);
             }
-            catch (DataException /* dex */)
-            {
-                //Log the error (uncomment dex variable name after DataException and add a line here to write a log.
-                ModelState.AddModelError(string.Empty, "Unable to save changes. Try again, and if the problem persists contact your system administrator.");
-            }
-            return View(article);
         }
 
         //
