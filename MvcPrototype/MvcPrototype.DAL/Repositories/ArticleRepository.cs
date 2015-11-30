@@ -13,12 +13,12 @@ namespace MvcPrototype.DAL.Repositories
         private IArticleContext _articleContext;
         private bool disposed = false;
 
-        public ArticleRepository(IArticleContext applicationContext)
+        public ArticleRepository(IArticleContext articleContext)
         {
-            if (applicationContext == null)
-                throw (new ArgumentNullException("applicationContext"));
+            if (articleContext == null)
+                throw (new ArgumentNullException("articleContext"));
 
-            _articleContext = applicationContext;
+            _articleContext = articleContext;
         }
 
         public IEnumerable<Article> GetArticles()

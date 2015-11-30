@@ -1,8 +1,8 @@
-﻿@model IEnumerable<MvcPrototype.Models.Article>
+﻿@model PagedList.IPagedList<MvcPrototype.Models.Article>
 @using PagedList.Mvc;
                       
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Articles";
 }
 
 <h2>Index</h2>
@@ -13,13 +13,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Name
+            @*@Html.DisplayNameFor(model => model.Name)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Description
+            @*@Html.DisplayNameFor(model => model.Description)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            Price
+            @*@Html.DisplayNameFor(model => model.Price)*@
         </th>
         <th></th>
     </tr>
