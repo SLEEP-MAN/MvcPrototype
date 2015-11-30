@@ -31,15 +31,20 @@ namespace MvcPrototype.DAL.Fake.Repositories
 
         public void InsertArticle(Article article)
         {
+            article.Id = _articles.Select(x => x.Id).Max() + 1;
             _articles.Add(article);
         }
 
         public void UpdateArticle(Article article)
         {
+            _articles.First(x => x.Id == article.Id).Name = article.Name;
+            _articles.First(x => x.Id == article.Id).Description = article.Description;
+            _articles.First(x => x.Id == article.Id).Price = article.Price;
         }
 
         public void DeleteArticle(int articleID)
         {
+            _articles.Remove(_articles.First(x => x.Id == articleID));
         }
 
         public void Save()

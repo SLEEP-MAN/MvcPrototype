@@ -25,5 +25,25 @@ namespace MvcPrototype.Services
         {
             return _articleRepository.GetArticletByID(id);
         }
+
+        public void InsertArticle(Article article)
+        {
+            _articleRepository.InsertArticle(article);
+        }
+
+        public void UpdateArticle(Article article)
+        {
+            _articleRepository.UpdateArticle(article);
+        }
+
+        public void Save()
+        {
+            _articleRepository.Save();
+        }
+
+        public void DeleteArticle(int id)
+        {
+            _articleRepository.DeleteArticle(id);
+        }
     }
 }

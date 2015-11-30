@@ -17,7 +17,8 @@ namespace MvcPrototype.Installers
             container.Register(Classes.FromAssemblyNamed("MvcPrototype.DAL.Fake")
                 .BasedOn<IRepository>()
                 .WithService.AllInterfaces()
-                .LifestyleTransient());
+                //.LifestyleTransient());
+                .LifestyleSingleton());
 
         }
     }

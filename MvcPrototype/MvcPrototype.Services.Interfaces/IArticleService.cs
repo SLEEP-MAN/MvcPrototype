@@ -7,5 +7,9 @@ namespace MvcPrototype.Services.Interfaces
     {
         IEnumerable<Article> GetArticles();
         Article GetArticleById(int id);
+        void InsertArticle(Article article);
+        void UpdateArticle(Article article);
+        void DeleteArticle(int id);
+        void Save();
     }
 }
