@@ -4,7 +4,7 @@ using PagedList;
 
 namespace MvcPrototype.Controllers
 {
-    class ArticleController : Controller
+    public class ArticleController : Controller
     {
         private IArticleRepository _articleRepository;
         

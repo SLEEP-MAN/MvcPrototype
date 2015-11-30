@@ -10,12 +10,15 @@ namespace MvcPrototype.Installers
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Classes.FromAssemblyNamed("MvcPrototype.DAL")
+                .BasedOn<IDbContext>()
+                .WithService.AllInterfaces()
+                .LifestyleTransient());
+            
+            container.Register(Classes.FromAssemblyNamed("MvcPrototype.DAL")
                 .BasedOn<IRepository>()
+                .WithService.AllInterfaces()
                 .LifestyleTransient());
 
-            container.Register(Classes.FromAssemblyNamed("MvcPrototype.DAL")
-                .BasedOn<IDbContext>()
-                .LifestyleTransient());
         }
     }
 }
