@@ -20,5 +20,10 @@ namespace MvcPrototype.Services
         {
             return _articleRepository.GetArticles().ToList();
         }
+
+        public Article GetArticleById(int id)
+        {
+            return _articleRepository.GetArticletByID(id);
+        }
     }
 }

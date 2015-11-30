@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using MvcPrototype.Models;
 using MvcPrototype.Services.Interfaces;
 using PagedList;
 
@@ -23,5 +24,15 @@ namespace MvcPrototype.Controllers
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
         }
+
+        //
+        // GET: /Article/Details/5
+
+        public ViewResult Details(int id)
+        {
+            Article student = _articleService.GetArticleById(id);
+            return View(student);
+        }
+
     }
 }
