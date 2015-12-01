@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Common.Logging;
 using MvcPrototype.DAL.Interfaces.Repositories;
 using MvcPrototype.Models;
 using MvcPrototype.Services.Interfaces;
@@ -9,10 +9,12 @@ namespace MvcPrototype.Services
 {
     public class ArticleService : IArticleService
     {
+        private ILog _logger;
         private IArticleRepository _articleRepository;
 
-        public ArticleService(IArticleRepository articleRepository)
+        public ArticleService(ILog logger, IArticleRepository articleRepository)
         {
+            _logger = logger;
             _articleRepository = articleRepository;
         }
 
@@ -29,11 +31,13 @@ namespace MvcPrototype.Services
         public void InsertArticle(Article article)
         {
             _articleRepository.InsertArticle(article);
+            _logger.Info("Article inserted: " + article.ToString());
         }
 
         public void UpdateArticle(Article article)
         {
             _articleRepository.UpdateArticle(article);
+            _logger.Info("Article updated: " + article.ToString());
         }
 
         public void Save()
@@ -43,7 +47,9 @@ namespace MvcPrototype.Services
 
         public void DeleteArticle(int id)
         {
+            Article article = _articleRepository.GetArticletByID(id);
             _articleRepository.DeleteArticle(id);
+            _logger.Info("Article updated: " + article.ToString());
         }
     }
 }

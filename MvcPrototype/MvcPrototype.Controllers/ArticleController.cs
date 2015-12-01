@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Web.Mvc;
+using Common.Logging;
 using FluentValidation.Results;
 using MvcPrototype.Models;
 using MvcPrototype.Services.Interfaces;

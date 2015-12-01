@@ -25,6 +25,7 @@ namespace MvcPrototype
         {
             container = new WindsorContainer()
                 .Install(FromAssembly.This());
+
             var controllerFactory = new WindsorControllerFactory(container.Kernel);
             ControllerBuilder.Current.SetControllerFactory(controllerFactory);
             ControllerBuilder.Current.DefaultNamespaces.Add("MvcPrototype.Controllers");
