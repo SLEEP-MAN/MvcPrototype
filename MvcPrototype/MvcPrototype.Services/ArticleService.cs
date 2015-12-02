@@ -12,9 +12,9 @@ namespace MvcPrototype.Services
         private ILog _logger;
         private IArticleRepository _articleRepository;
 
-        public ArticleService(ILog logger, IArticleRepository articleRepository)
+        public ArticleService(IArticleRepository articleRepository)
         {
-            _logger = logger;
+            _logger = LogManager.GetLogger(typeof(ArticleService));
             _articleRepository = articleRepository;
         }
 
